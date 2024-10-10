@@ -34,7 +34,7 @@ jobs:
 
     # Step 5: Fetch OpenAPI documentation (assuming it's available at /v3/api-docs)
     - name: Fetch OpenAPI Docs
-      run: curl http://localhost:8090/api-docs -o openapi.json
+      run: curl http://localhost:8080/api-docs -o openapi.json
 
     # Step 6: Display OpenAPI Docs in the logs
     - name: Display OpenAPI Docs
