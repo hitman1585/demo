@@ -26,6 +26,10 @@ jobs:
     - name: Build with Maven
       run: mvn clean package
 
+    # Step 4: List JAR files to confirm their presence
+    - name: List JAR files
+      run: ls target/
+
     # Step 4: Run the Spring Boot application in the background
     - name: Start Spring Boot Application
       run: |
