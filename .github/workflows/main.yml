@@ -28,12 +28,12 @@ jobs:
 
     # Step 4: List JAR files to confirm their presence
     - name: List JAR files
-      run: ls target/
+      run: ls Pankaj1/target/
 
     # Step 4: Run the Spring Boot application in the background
     - name: Start Spring Boot Application
       run: |
-        nohup java -jar target/*.jar &
+        nohup java -jar Pankaj1/target/*.jar &
         sleep 30 # Wait for the app to start
 
     # Step 5: Fetch OpenAPI documentation (assuming it's available at /v3/api-docs)
