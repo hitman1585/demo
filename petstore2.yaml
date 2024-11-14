@@ -6,5 +6,6 @@ metadata:
 spec:
   type: openapi
   lifecycle: production
+  owner: petstore-team
   definition:
     $text: 'https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml'
