@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: pankaj1
+  description: pankaj1description
+spec:
+  type: openapi
+  lifecycle: production
+  owner: pankaj1team
+  definition: |
+    openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+paths:
+  /pankaj1:
+    get:
+      tags:
+      - pankaj-1-api
+      operationId: pankaj1
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+components: {}
+
