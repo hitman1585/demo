@@ -28,7 +28,7 @@ jobs:
 
     # Step 4: Run Maven compile
     - name: Run Maven compile
-      run: mvn compile -Dskip.enunciate=true
+      run: mvn compile -Dskip.enunciate=false
 
     # Step 5: Access and print JSON file
     - name: Print JSON file content
