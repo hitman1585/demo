@@ -22,35 +22,15 @@ jobs:
         java-version: '23'
         distribution: 'temurin'
 
-    # Step 3: Build the Spring Boot application
-    - name: Build with Maven
-      run: mvn clean package
+    # Step 3: Change directory to 'pankaj2'
+    - name: Change directory to pankaj2
+      run: cd Pankaj2
 
-    # Step 4: Run the Spring Boot application in the background
-    - name: Start Spring Boot Application
+    # Step 4: Run Maven compile
+    - name: Run Maven compile
+      run: mvn compile -Dskip.enunciate=fals
+
+    # Step 5: Access and print JSON file
+    - name: Print JSON file content
       run: |
-        nohup java -jar Pankaj1/target/*.jar --server.port=8090 &
-        sleep 30 # Wait for the app to start
-
-     # Step 4: Run the Spring Boot application in the background
-    - name: Start Spring Boot Application
-      run: |
-        nohup java -jar Pankaj2/target/*.jar --server.port=8091 &
-        sleep 30 # Wait for the app to start
-
-    # Step 5: Fetch OpenAPI documentation (assuming it's available at /v3/api-docs)
-    - name: Fetch OpenAPI Docs
-      run: curl http://localhost:8090/v3/api-docs -o openapi8090.json
-
-    # Step 5: Fetch OpenAPI documentation (assuming it's available at /v3/api-docs)
-    - name: Fetch OpenAPI Docs
-      run: curl http://localhost:8091/v3/api-docs -o openapi8091.json
-
-
-    # Step 6: Display OpenAPI Docs in the logs
-    - name: Display OpenAPI Docs
-      run: cat openapi8090.json
-
-    # Step 6: Display OpenAPI Docs in the logs
-    - name: Display OpenAPI Docs
-      run: cat openapi8091.json
+        cat Pankaj2/target/docs/apidocs/ui/openapi.json
